@@ -10,4 +10,4 @@
 
 5 - check that http://localhost:9000/api/todos gets forwarded to the rails server.
 
-# airpair_rails_angular_devise
+6 - replaced ng-route with ui.router, removed unnecessary controllers and views. Ready for authentication.
