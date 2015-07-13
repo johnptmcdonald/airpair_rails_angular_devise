@@ -11,3 +11,5 @@
 5 - check that http://localhost:9000/api/todos gets forwarded to the rails server.
 
 6 - replaced ng-route with ui.router, removed unnecessary controllers and views. Ready for authentication.
+
+7 - devise_token_auth to gemfile

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+gem 'devise_token_auth'
+gem 'omniauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
