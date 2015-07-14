@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ui.router',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ng-token-auth'
   ])
   
   .config([
@@ -24,6 +25,12 @@ angular
     function($stateProvider, $urlRouterProvider){
 
       $stateProvider
+        .state('sign_in', {
+          url: '/sign_in',
+          templateUrl: '../views/user_sessions/new.html',
+          controller: 'UserSessionsController as vm'
+        })
+
         .state('main', {
           url: '/main',
           templateUrl: '../views/main.html',
@@ -33,3 +40,9 @@ angular
       $urlRouterProvider.otherwise('main');
 
     }])
+
+  .run(['$rootScope', '$location', function($rootScope, $location) {
+  $rootScope.$on('auth:login-success', function() {
+    $location.path('/');
+  });
+}]);
