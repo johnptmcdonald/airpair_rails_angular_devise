@@ -48,3 +48,9 @@ class ApplicationController < ActionController::Base
 end
 ```
 
+9 - Handling authentication failure
+	use $scope.$on('name of event', function(){
+		// console.log("name of event just happened")
+	})
+
+// Still to do - SECURING PAGES AND API ENDPOINTS

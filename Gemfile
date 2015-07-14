@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'devise_token_auth'
+gem 'devise_token_auth', git: 'https://github.com/jasonswett/devise_token_auth.git'
 gem 'omniauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

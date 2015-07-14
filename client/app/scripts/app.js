@@ -31,6 +31,12 @@ angular
           controller: 'UserSessionsController as vm'
         })
 
+        .state('sign_up', {
+          url: '/sign_up',
+          templateUrl: '../views/user_registrations/new.html',
+          controller: 'UserRegistrationsController as vm'
+        })
+
         .state('main', {
           url: '/main',
           templateUrl: '../views/main.html',

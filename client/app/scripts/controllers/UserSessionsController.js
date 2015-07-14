@@ -5,12 +5,16 @@
         .module('clientApp')
         .controller('UserSessionsController', UserSessionsController);
 
-    UserSessionsController.$inject = ['$auth'];
+    UserSessionsController.$inject = ['$scope'];
 
     /* @ngInject */
-    function UserSessionsController($auth) {
+    function UserSessionsController($scope) {
         var vm = this;
+        vm.errors;
 
+        $scope.$on('auth:login-error', function(event, reason){
+        	vm.error = reason.errors[0];
+        })
 
     }
 })();
