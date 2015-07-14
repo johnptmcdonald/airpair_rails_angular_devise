@@ -15,6 +15,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="clientApp">
+    {{user}}
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -40,8 +41,9 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
 
-              <li ng-cloak ng-show="!user.id"><a ng-href="/sign_in">Sign in</a></li> 
+              <li ng-cloak ng-show="!user.id"><a ng-href="#/sign_in">Sign in</a></li> 
               <li ng-cloak ng-show="user.id"><a ng-click='signOut()'>Sign out</a></li>
+              <li ng-cloak ng-show="user.id"><a ng-href="#/todos/index">My Todo List</a></li>
 
             </ul>
           </div>
@@ -92,6 +94,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/UserSessionsController.js"></script>
         <script src="scripts/controllers/UserRegistrationsController.js"></script>
+        <script src="scripts/controllers/TodosController.js"></script>
         <!-- endbuild -->
 </body>
 </html>
