@@ -14,11 +14,8 @@
 
         function handleRegistrationButton(registrationForm){
         	$auth.submitRegistration(registrationForm)
-        		.then(function(){
+        		.success(function(){
         			$auth.submitLogin({email: registrationForm.email, password: registrationForm.password})
-        				.then(function(data){
-        					console.log(data);
-        				})
         		})
         }
 

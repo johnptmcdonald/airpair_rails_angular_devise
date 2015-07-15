@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
           :recoverable, :rememberable, :trackable, :validatable,
           :confirmable, :omniauthable
   
+  has_many :todos
 
   before_validation do
     self.provider = "email"

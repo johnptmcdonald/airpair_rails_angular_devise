@@ -70,5 +70,18 @@ include DeviseTokenAuth::Concerns::SetUserByToken
 
 LASTLY - The client is effectively on the same domain as the server, so didn't need to account for CSRF using rack-cors. Needs to be changed for a complete separation of client and server.
 
+------
+
+To do:
+
+- extract $http calls to todos controller to a factory
+- user can make new todos
+- user can destroy todos
+- user is confirmable via email
+- user can log in with facebook
+- user can edit their profile
+- completely separate client and server
+
+- deploy to heroku
 
 
