@@ -12,17 +12,5 @@
         var vm = this;
          vm.todos = [];
 
-         $auth.validateUser()
-         	.then(function(data){
-         		console.log(data)
-         		$http.get('api/todos')
-	         	.success(function(data){
-	         		vm.todos = data;
-	         		console.log(data);
-	         	})
-         	})
-
-
-
     }
 })();

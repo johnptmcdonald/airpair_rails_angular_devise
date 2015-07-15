@@ -11,8 +11,9 @@
 5 - check that http://localhost:9000/api/todos gets forwarded to the rails server.
 
 6 - replaced ng-route with ui.router, removed unnecessary controllers and views. Ready for authentication.
+---- // I actually rolled this back, as I was having issues. It's on my TODO list to put ui.router back in.
 
-7 - devise_token_auth to gemfile
+7 - devise_token_auth to gemfile.
 
 7.5 - make a UserSessionsController. What's cool is that the ng_token_auth module adds a bunch of $rootscope methods to your app. These are methods available on every page, not assigned to a particular controller. You can check this in the source code for ng_token_auth:
 
@@ -53,4 +54,21 @@ end
 		// console.log("name of event just happened")
 	})
 
-// Still to do - SECURING PAGES AND API ENDPOINTS
+10 - to ensure the server side recognises a user, you need to have skipped confirmation in the User model:
+
+```
+  before_save -> do
+    skip_confirmation!
+  end
+```
+
+and obv make sure your ApplicationController has:
+
+```
+include DeviseTokenAuth::Concerns::SetUserByToken
+```
+
+LASTLY - The client is effectively on the same domain as the server, so didn't need to account for CSRF using rack-cors. Needs to be changed for a complete separation of client and server.
+
+
+

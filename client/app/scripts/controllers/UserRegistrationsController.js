@@ -12,8 +12,6 @@
         var vm = this;
         vm.handleRegistrationButton = handleRegistrationButton;
 
-        console.log($rootScope.user);
-
         function handleRegistrationButton(registrationForm){
         	$auth.submitRegistration(registrationForm)
         		.then(function(){
