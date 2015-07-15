@@ -5,6 +5,16 @@ All the angular stuff is kept in the client folder in the rails root.
 
 The seed app uses ng_token_auth and devise_token_auth to authenticate users, and uses a Todo resource to illustrate a secured rails API endpoint. The app skips user email confirmation.
 
+The app is built in Rails 4.2.1 and Angular 1.4.2, with a Postgres database.
+
+To get set up locally just clone the repo, then:
+
+* `bundle install` the gems 
+
+* `rake db:create && rake db:migrate` the database
+
+* In the client folder, run `grunt serve` to start a server
+
 --------
 <!-- 
 1 - set up scope '/api'
