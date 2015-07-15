@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ui.router',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ng-token-auth'
   ])
   
   .config([
@@ -24,12 +25,41 @@ angular
     function($stateProvider, $urlRouterProvider){
 
       $stateProvider
+        .state('sign_in', {
+          url: '/sign_in',
+          templateUrl: '../views/user_sessions/new.html',
+          controller: 'UserSessionsController as vm'
+        })
+
+        .state('sign_up', {
+          url: '/sign_up',
+          templateUrl: '../views/user_registrations/new.html',
+          controller: 'UserRegistrationsController as vm'
+        })
+
         .state('main', {
           url: '/main',
           templateUrl: '../views/main.html',
           controller: 'MainController as vm'
+        })
+
+        .state('todos_index', {
+          url: '/todos/index',
+          templateUrl: '../views/todos/index.html',
+          controller: 'TodosController as vm',
+          resolve: {
+            auth: ['$auth', function($auth) {
+              return $auth.validateUser();
+            }]
+          }
         });
 
       $urlRouterProvider.otherwise('main');
 
     }])
+
+  .run(['$rootScope', '$location', function($rootScope, $location) {
+    $rootScope.$on('auth:login-success', function() {
+      $location.path('/todos/index');
+    });
+  }]);

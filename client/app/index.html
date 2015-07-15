@@ -39,8 +39,11 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
+
+              <li ng-cloak ng-show="!user.id"><a ng-href="#/sign_in">Sign in</a></li> 
+              <li ng-cloak ng-show="user.id"><a ng-click='signOut()'>Sign out</a></li>
+              <li ng-cloak ng-show="user.id"><a ng-href="#/todos/index">My Todo List</a></li>
+
             </ul>
           </div>
         </div>
@@ -80,12 +83,17 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-cookie/angular-cookie.js"></script>
+    <script src="bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/UserSessionsController.js"></script>
+        <script src="scripts/controllers/UserRegistrationsController.js"></script>
+        <script src="scripts/controllers/TodosController.js"></script>
         <!-- endbuild -->
 </body>
 </html>
