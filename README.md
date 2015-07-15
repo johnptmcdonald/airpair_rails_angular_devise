@@ -1,3 +1,12 @@
+--------
+This is a seed app for an authenticated angular on rails app.
+
+All the angular stuff is kept in the client folder in the rails root. 
+
+The seed app uses ng_token_auth and devise_token_auth to authenticate users, and uses a Todo resource to illustrate a secured rails API endpoint. The app skips user email confirmation.
+
+--------
+<!-- 
 1 - set up scope '/api'
 
 2 - make a client folder in rails root, and yo angular client in it. Accept the defaults.
@@ -83,5 +92,5 @@ To do:
 - completely separate client and server
 
 - deploy to heroku
-
+ -->
 
