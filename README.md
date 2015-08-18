@@ -9,11 +9,23 @@ The app is built in Rails 4.2.1 and Angular 1.4.2, with a Postgres database.
 
 To get set up locally just clone the repo, then:
 
-* `bundle install` the gems 
+* make sure you have Compass installed:
 
-* `rake db:create && rake db:migrate` the database
+```
+$ gem update --system && gem install compass
+```
 
-* In the client folder, run `grunt serve` to start a server
+* `$ bundle install` the ruby gems 
+
+* `$ rake db:create && rake db:migrate` the database
+
+*  start your rails server (`$ rails s`)
+
+* In the client folder, run `$ npm install && bower install` to include all the dependencies
+
+* Finally run `$ grunt serve` from the client folder to start a server.
+
+Right now, users can only be created from the command line. 
 
 --------
 <!-- 
@@ -92,6 +104,7 @@ LASTLY - The client is effectively on the same domain as the server, so didn't n
 ------
 
 To do:
+- Allow user to signup
 
 - extract $http calls to todos controller to a factory
 - user can make new todos
